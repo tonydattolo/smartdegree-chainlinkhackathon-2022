@@ -1,0 +1,30 @@
+from brownie import (
+    accounts,
+    config,
+    SmartDegree,
+    network
+)
+from dotenv import load_dotenv
+load_dotenv()
+
+empty_transcript_uri = "https://ipfs.io/ipfs/QmdwTtHcDLNP43VkjeZxKeakgokMaiwpxUeBbWgr22V6ZS"
+updated_transcript_uri = "https://ipfs.io/ipfs/QmdwTtHcDLNP43VkjeZxKeakgokMaiwpxUeBbWgr22V6ZS"
+
+
+def get_account(configWalletName):
+    # check if active network is development (ganache)
+    if network.show_active() == "development":
+        return accounts[0]
+    # if it's an active testnet, we need an actual account
+    else:
+        return accounts.add(config['wallets'][f'{configWalletName}'])
+
+def main():
+    studentAccount = get_account('studentTestAccount')
+    smartDegree = SmartDegree.deploy({'from': studentAccount}) # accessing SimpleStorage.sol
+    tx = smartDegree.createSmartDegree(empty_transcript_uri, {'from': studentAccount})
+    tx.wait(1)
+    currentCoursesCompleted = smartDegree.getCoursesCompleted()
+    print(f'{currentCoursesCompleted=}')
+
+

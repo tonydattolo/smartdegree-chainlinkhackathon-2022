@@ -9,8 +9,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 def updateRinkeyby():
-    studentAccount = get_account('rinkebyTest1Student')
-    instructorAccount = get_account('rinkebyTest4Instructor')
+    studentAccount = get_account('studentTestAccount')
+    multiversityAccount = get_account('multiversityTestAccount')
+    instructorAccount = get_account('instuctorTestAccount')
+    employerAccount = get_account('employerTestAccount')
     smartDegree = SmartDegree[-1]
 
     currentCoursesCompleted = smartDegree.getCoursesCompleted()
