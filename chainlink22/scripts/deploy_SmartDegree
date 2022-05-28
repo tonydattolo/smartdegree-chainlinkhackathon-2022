@@ -7,7 +7,7 @@ from brownie import (
 from dotenv import load_dotenv
 load_dotenv()
 
-empty_transcript_uri = "https://ipfs.io/ipfs/QmdwTtHcDLNP43VkjeZxKeakgokMaiwpxUeBbWgr22V6ZS"
+empty_transcript_uri = "https://ipfs.io/ipfs/Qmcy7BzwKducdyzGvcKfQQiY1bHoqTeXXoQSh7Yt7xjkJD"
 updated_transcript_uri = "https://ipfs.io/ipfs/QmdwTtHcDLNP43VkjeZxKeakgokMaiwpxUeBbWgr22V6ZS"
 
 

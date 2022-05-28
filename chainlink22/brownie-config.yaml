@@ -19,7 +19,7 @@ compiler:
   # hardhat:
   #   verify: False
 wallets:
-  rinkebyTest1Student: ${studentTestAccount}
-  rinkeybyTest2Multiversity: ${multiversityTestAccount}
-  rinkebyTest3Employer: ${employerTestAccount}
-  rinkebyTest4Instructor: ${instructorTestAccount}
+  studentTestAccount: ${studentTestAccount}
+  multiversityTestAccount: ${multiversityTestAccount}
+  employerTestAccount: ${employerTestAccount}
+  instructorTestAccount: ${instructorTestAccount}
